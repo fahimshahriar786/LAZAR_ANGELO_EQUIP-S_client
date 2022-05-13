@@ -43,6 +43,20 @@ const Manage = () => {
             <div className="row">
             <h1 className='text-dark fw-bold text-center my-4'> All Products </h1>
             <div className="services-container"></div>
+            
+            {
+                services.map(service => <ManageService
+                    key={service._id}
+                    service={service}
+                    handleUserDelete={handleUserDelete}
+                >
+                    Delete
+                </ManageService>)
+            }
+            </div>
+            </div>
+        </div>
+        
     );
 };
 
