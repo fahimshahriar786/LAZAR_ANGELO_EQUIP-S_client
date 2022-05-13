@@ -1,0 +1,52 @@
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import MyItemsCollab from '../MyItemsCollab/MyItemsCollab';
+
+const MyItems = () => {
+    const [user] = useAuthState(auth)
+    const [myProducts, setMyProduct] = useState([]);
+    useEffect(() => {
+
+        const myAddedProducts = async () => {
+            const email = user?.email
+            const url = `https://secure-oasis-08432.herokuapp.com/ordered?email=${email}`
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            setMyProduct(data)
+        }
+        myAddedProducts();
+
+     
+
+
+    }, [user])
+    const handleUserDelete = id => {
+        const allow = window.confirm('You dare to delete !');
+        if (allow) {
+            console.log('deleting user with id, ', id);
+            const url = `/product/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        console.log('deleted');
+                        const remaining = myProducts.filter(user => user._id !== id);
+                        setMyProduct(remaining);
+                    }
+                })
+        }
+    }
+    return (
+        
+    );
+};
+
+export default MyItems;
