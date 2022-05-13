@@ -45,7 +45,23 @@ const MyItems = () => {
         }
     }
     return (
-        
+        <div>
+
+            <div className='container'>
+                <h1>Products those are Added by me :</h1>
+                <h1>products {myProducts.length}</h1>
+
+                <div className=' row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+                    {
+                        myProducts.map((myproduct) => <MyItemsCollab
+                            key={myproduct._id}
+                            handleUserDelete={handleUserDelete}
+                            myproduct={myproduct}></MyItemsCollab>)
+                    }
+                </div>
+
+            </div>
+        </div>
     );
 };
 
