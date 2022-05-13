@@ -38,7 +38,11 @@ const Manage = () => {
 
 
     return (
-        
+        <div>
+            <div id="services" className='container'>
+            <div className="row">
+            <h1 className='text-dark fw-bold text-center my-4'> All Products </h1>
+            <div className="services-container"></div>
     );
 };
 
