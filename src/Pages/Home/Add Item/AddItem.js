@@ -39,6 +39,12 @@ const AddItem = () => {
             <h1 className=' text-success fw-bold'> Add Inventory Collections</h1>
             <form onSubmit={handleAddItem} className='mt-4 '>
                     <input className='w-75 mb-2 d-block mx-auto' style={{ height: "40px" }} type='text' name="productName" placeholder='Product Name'></input>
+                    <br/>
+                    <input className='w-75 d-block mx-auto' style={{ height: "40px" }} type='number' name="price" placeholder='Price'></input>
+                    <br/>
+                    <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='number' name="quantity" placeholder='Quantity'></input>
+                    <br/>
+                    <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='text' name="img" placeholder='Img Link'></input>
     );
 };
 
