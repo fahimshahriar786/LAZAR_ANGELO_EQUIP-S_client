@@ -45,6 +45,16 @@ const AddItem = () => {
                     <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='number' name="quantity" placeholder='Quantity'></input>
                     <br/>
                     <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='text' name="img" placeholder='Img Link'></input>
+                    <br/>
+                    <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='text' value={user.email} name="email" placeholder='Email'></input>
+                    <br/>
+                    <textarea className='w-75  d-block mx-auto'  type='text' name="description" placeholder='Description'></textarea>
+                    <br/>
+                    <input className='w-75  d-block mx-auto' style={{ height: "40px" }} type='text' name="supplierName" placeholder='Supplier Name'></input>
+                    <br/>
+                    <input className='btn btn-success fw-bold rounded-pill d-block mx-auto' type="submit" value="Add Item"></input>
+                </form>
+        </div>
     );
 };
 
