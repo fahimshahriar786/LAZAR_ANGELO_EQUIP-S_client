@@ -14,6 +14,12 @@ const MyItemsCollab = ({myproduct,handleUserDelete}) => {
                     <p className=""><small>{description}</small></p>
                 </div>
                 <div className="card-footer d-flex justify-content-between"></div>
+                <button onClick={() => handleUserDelete(_id)} className='btn btn-danger rounded-pill  '> Delete Item</button>
+
+</div>
+</div>
+
+
     );
 };
 
